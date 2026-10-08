@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Event Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">CE</div>
+
+            <div>
+                <h2>CampusEvent</h2>
+                <p>Management Hub</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <button class="nav-item active"
+                    onclick="showSection('dashboard', this)">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('events', this)">
+                <span>▣</span>
+                Events
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('registrations', this)">
+                <span>✓</span>
+                Registrations
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('addRegistration', this)">
+                <span>＋</span>
+                Register
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="db-status">
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>Database</strong>
+                    <small>Connected</small>
+                </div>
+            </div>
+
+            <p class="version">JDBC • MySQL</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Campus / Event Management</p>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+
+            <div class="header-right">
+
+                <div class="date-box">
+                    <span>◷</span>
+                    <span id="currentDate"></span>
+                </div>
+
+                <div class="avatar">
+                    NS
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="section active">
+
+            <div class="welcome-card">
+
+                <div>
+                    <p class="eyebrow">CAMPUS EVENT HUB</p>
+
+                    <h2>
+                        Manage every event,
+                        <br>
+                        <span>in one place.</span>
+                    </h2>
+
+                    <p>
+                        Register students, manage events and
+                        track participation using SQL and JDBC.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        onclick="showSection('addRegistration')">
+
+                        + New Registration
+
+                    </button>
+
+                </div>
+
+                <div class="welcome-graphic">
+
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+
+                    <div class="calendar-icon">
+                        📅
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ◈
+                    </div>
+
+                    <div>
+                        <p>Total Events</p>
+                        <h3>05</h3>
+                        <span>Available events</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ♙
+                    </div>
+
+                    <div>
+                        <p>Students</p>
+                        <h3>05</h3>
+                        <span>Registered users</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+                        <p>Registrations</p>
+                        <h3>05</h3>
+                        <span>Total registrations</span>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ◉
+                    </div>
+
+                    <div>
+                        <p>Categories</p>
+                        <h3>04</h3>
+                        <span>Event categories</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- UPCOMING EVENTS -->
+
+            <div class="content-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Upcoming Events</h3>
+                        <p>Latest campus events</p>
+                    </div>
+
+                    <button
+                        onclick="showSection('events')"
+                        class="outline-btn">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+
+                <div class="event-list">
+
+                    <div class="event-row">
+
+                        <div class="event-date">
+                            <strong>20</strong>
+                            <span>OCT</span>
+                        </div>
+
+                        <div class="event-info">
+                            <h4>TechFest 2026</h4>
+                            <p>Technical • TP2 Auditorium</p>
+                        </div>
+
+                        <span class="badge orange-badge">
+                            Technical
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-row">
+
+                        <div class="event-date">
+                            <strong>22</strong>
+                            <span>OCT</span>
+                        </div>
+
+                        <div class="event-info">
+                            <h4>CodeSprint</h4>
+                            <p>Coding • Lab 5</p>
+                        </div>
+
+                        <span class="badge purple-badge">
+                            Coding
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-row">
+
+                        <div class="event-date">
+                            <strong>24</strong>
+                            <span>OCT</span>
+                        </div>
+
+                        <div class="event-info">
+                            <h4>Design Arena</h4>
+                            <p>Design • Tech Park</p>
+                        </div>
+
+                        <span class="badge blue-badge">
+                            Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVENTS -->
+
+        <section id="events" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">EVENT DATABASE</p>
+                    <h2>Campus Events</h2>
+                    <p>Browse all available events.</p>
+                </div>
+
+                <button class="primary-btn">
+                    + Create Event
+                </button>
+
+            </div>
+
+
+            <div class="event-grid">
+
+                <div class="event-card">
+
+                    <div class="event-card-top technical">
+                        TECHNICAL
+                    </div>
+
+                    <div class="event-card-body">
+
+                        <h3>TechFest 2026</h3>
+
+                        <p>
+                            Explore emerging technologies
+                            and innovative solutions.
+                        </p>
+
+                        <div class="event-meta">
+                            📅 20 Oct 2026
+                        </div>
+
+                        <div class="event-meta">
+                            📍 TP2 Auditorium
+                        </div>
+
+                        <button
+                            class="card-btn"
+                            onclick="openRegistration('TechFest 2026')">
+
+                            Register Now →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-card">
+
+                    <div class="event-card-top coding">
+                        CODING
+                    </div>
+
+                    <div class="event-card-body">
+
+                        <h3>CodeSprint</h3>
+
+                        <p>
+                            Test your programming skills
+                            through exciting challenges.
+                        </p>
+
+                        <div class="event-meta">
+                            📅 22 Oct 2026
+                        </div>
+
+                        <div class="event-meta">
+                            📍 Lab 5
+                        </div>
+
+                        <button
+                            class="card-btn"
+                            onclick="openRegistration('CodeSprint')">
+
+                            Register Now →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-card">
+
+                    <div class="event-card-top design">
+                        DESIGN
+                    </div>
+
+                    <div class="event-card-body">
+
+                        <h3>Design Arena</h3>
+
+                        <p>
+                            Showcase creativity through
+                            UI and visual design.
+                        </p>
+
+                        <div class="event-meta">
+                            📅 24 Oct 2026
+                        </div>
+
+                        <div class="event-meta">
+                            📍 Tech Park
+                        </div>
+
+                        <button
+                            class="card-btn"
+                            onclick="openRegistration('Design Arena')">
+
+                            Register Now →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="event-card">
+
+                    <div class="event-card-top hackathon">
+                        HACKATHON
+                    </div>
+
+                    <div class="event-card-body">
+
+                        <h3>Hackathon</h3>
+
+                        <p>
+                            Build innovative solutions
+                            with your team.
+                        </p>
+
+                        <div class="event-meta">
+                            📅 26 Oct 2026
+                        </div>
+
+                        <div class="event-meta">
+                            📍 TP1 Hall
+                        </div>
+
+                        <button
+                            class="card-btn"
+                            onclick="openRegistration('Hackathon')">
+
+                            Register Now →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REGISTRATIONS -->
+
+        <section id="registrations" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">DATABASE RECORDS</p>
+
+                    <h2>Registrations</h2>
+
+                    <p>
+                        Records retrieved using SQL JOIN.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="showSection('addRegistration')">
+
+                    + Add Registration
+
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="table-tools">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search student or event..."
+                        onkeyup="searchTable()">
+
+                    <select onchange="filterStatus(this.value)">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Registered">
+                            Registered
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table id="registrationTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Student</th>
+                                <th>Department</th>
+                                <th>Event</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#001</td>
+                                <td>
+                                    <strong>Nikshitha Sri</strong>
+                                </td>
+                                <td>CSE</td>
+                                <td>TechFest 2026</td>
+                                <td>Technical</td>
+                                <td>
+                                    <span class="status registered">
+                                        Registered
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteRegistration(this)">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>#002</td>
+                                <td>
+                                    <strong>Ananya Sharma</strong>
+                                </td>
+                                <td>CSE</td>
+                                <td>TechFest 2026</td>
+                                <td>Technical</td>
+
+                                <td>
+                                    <span class="status registered">
+                                        Registered
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteRegistration(this)">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>#003</td>
+
+                                <td>
+                                    <strong>Rahul Kumar</strong>
+                                </td>
+
+                                <td>ECE</td>
+
+                                <td>CodeSprint</td>
+
+                                <td>Coding</td>
+
+                                <td>
+                                    <span class="status registered">
+                                        Registered
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteRegistration(this)">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>#004</td>
+
+                                <td>
+                                    <strong>Nikshitha Sri</strong>
+                                </td>
+
+                                <td>CSE</td>
+
+                                <td>Hackathon</td>
+
+                                <td>Technical</td>
+
+                                <td>
+                                    <span class="status registered">
+                                        Registered
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="delete-btn"
+                                        onclick="deleteRegistration(this)">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD REGISTRATION -->
+
+        <section id="addRegistration" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">NEW RECORD</p>
+
+                    <h2>Event Registration</h2>
+
+                    <p>
+                        Add a student registration to the database.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <div class="form-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3>Student Registration</h3>
+                        <p>
+                            Enter the student's details below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="registrationForm"
+                      onsubmit="submitRegistration(event)">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+
+                            <label>Student Name</label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                placeholder="Enter student name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>Email</label>
+
+                            <input
+                                type="email"
+                                id="studentEmail"
+                                placeholder="student@srmist.edu.in"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>Department</label>
+
+                            <select id="department" required>
+
+                                <option value="">
+                                    Select department
+                                </option>
+
+                                <option>CSE</option>
+                                <option>ECE</option>
+                                <option>IT</option>
+                                <option>EEE</option>
+                                <option>MECH</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>Year</label>
+
+                            <select id="year" required>
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group full">
+
+                            <label>Select Event</label>
+
+                            <select id="event" required>
+
+                                <option value="">
+                                    Select an event
+                                </option>
+
+                                <option>TechFest 2026</option>
+                                <option>CodeSprint</option>
+                                <option>Design Arena</option>
+                                <option>Hackathon</option>
+                                <option>Cultural Night</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            onclick="showSection('dashboard')">
+
+                            Cancel
+
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Complete Registration →
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SUCCESS POPUP -->
+
+    <div id="toast" class="toast">
+
+        <span>✓</span>
+
+        <div>
+            <strong>Registration Successful</strong>
+            <p>Student has been registered.</p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
