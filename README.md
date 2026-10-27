@@ -103,6 +103,9 @@ Java JDBC is used for:
 - Deleting records
 
 ---
+<img width="666" height="295" alt="image" src="https://github.com/user-attachments/assets/bce91833-aaae-4e0b-b7e2-e516c7f16791" />
+<img width="671" height="295" alt="image" src="https://github.com/user-attachments/assets/f25929cc-daa2-4bea-9845-a9b77adb662d" />
+<img width="667" height="292" alt="image" src="https://github.com/user-attachments/assets/e1bd517e-1fab-4ba5-bc47-3e16607af750" />
 
 ## 🛠️ Technologies Used
 
